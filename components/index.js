@@ -1,0 +1,8 @@
+export {default as InputSearch} from "./InputSearch"
+export {default as Card} from "./Card"
+export {default as ItemSeparator} from "./ItemSeparator"
+export {default as HeroDetails} from "./HeroDetails"
+export {default as AboutMovie} from "./AboutMovie"
+export {default as Casts} from "./Casts"
+export {default as Reviwes} from "./Reviwes"
+export {default as SmallDetailsCard} from "./SmallDetailsCard"
