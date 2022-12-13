@@ -7,7 +7,7 @@ import  BottomNavigator from './navigation/BottomNavigator';
 import 'react-native-gesture-handler';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native';
-import ProviderContext from "./Context"
+import {Bookmark} from "./components/Icons";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,9 +29,7 @@ export default function App() {
             ),
             title:"Details",
             headerRight:()=>(
-             <TouchableOpacity style={{right:15}}>
-             <MaterialIcons name="turned-in" size={25} color={'#fff'}  />
-             </TouchableOpacity>
+             <Bookmark dataMovie={route.params}  />
             ),
             headerTitleAlign:'center',
             headerTintColor:'white',
