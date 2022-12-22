@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useStore } from '../hooks/useStoreMovie';
@@ -7,7 +7,7 @@ const Bookmark = ({dataMovie}) =>
 {
    const [markedState,setMarkedState] = useState(false);
    const {isExist,addMovie,deleteMovie} = useStore('favorites');
-   useLayoutEffect(()=>{
+   useEffect(()=>{
         setMarkedState(isExist(dataMovie.movieId))
    },[dataMovie])
  

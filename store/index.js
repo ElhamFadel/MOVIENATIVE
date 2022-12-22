@@ -4,8 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const storeData = async (key,item) => {
   try {
     const data = JSON.stringify(item)
-    const stor = await AsyncStorage.setItem(key, data);
-    console.log("hiiiiiii",stor);
+    await AsyncStorage.setItem(key, data);
+    // console.log("hiiiiiii",stor);
     return;
   } catch (e) {
     console.log(e)
@@ -15,7 +15,8 @@ export const storeData = async (key,item) => {
 // reading 
 export const getData = async (key) => {
   try {
-    const data = await AsyncStorage.getItem(key)
+    const data = await AsyncStorage.getItem(key);
+    console.log("datattatatatatattattata",data,key);
     return data != null ? JSON.parse(data) : null;
   } catch(e) {
     console.log(e)
@@ -24,11 +25,14 @@ export const getData = async (key) => {
 // refresh data
 export const updateData =  async ({key,data}) =>{
      const prevData = await getData(key);
-     if(!prevData){
-         return storeData(key, [data]);
+     console.log(prevData,"previuossssss")
+     if(prevData.length == 0){
+        console.log("storeeee Data",data)
+         return storeData(key, data);
        }
-     const convertPrevData = JSON.parse(prevData);
-     return storeData(key, [...convertPrevData, data])
+      console.log("collection Data",prevData,data)
+    //  const convertPrevData = JSON.parse(prevData);
+     return storeData(key, [...prevData, data])
 }
 
 export async function deleteData({key, id}) {

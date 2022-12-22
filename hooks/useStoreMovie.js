@@ -6,13 +6,18 @@ export function useStore() {
   const KEY_MOVIE = 'FAVORITE';
   useEffect(() => {
     (async()=>{
+        console.log("22222222222")
         const dataStore =  await getData(KEY_MOVIE);
         dataStore?setData(dataStore):null;
     })();
   },[]);
 
-const isExist = useCallback((id)=>{
-const dataFilter = data.filter(item => item.id === id);
+const isExist = useCallback(async(id)=>{
+  console.log("1111111111")
+  console.log(id);
+  console.log("data you said",data)
+const data = await getData(KEY_MOVIE);
+const dataFilter = data.filter(item => item.movieId == id);
 console.log(dataFilter,"check is exist")
 if(dataFilter.length > 0) return true;
 return false;
@@ -20,9 +25,10 @@ return false;
 
 
 const addMovie = useCallback((data) => {
-    (!isExist(data.movieId))
+    if(!isExist(data.movieId)){
       console.log("Hiiii,is not here")
-      // updateData({key: KEY_MOVIE, data});
+      updateData({key: KEY_MOVIE, data});
+    }
     
       
   }, [data]);
