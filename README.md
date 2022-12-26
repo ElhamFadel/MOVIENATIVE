@@ -1,2 +1,2 @@
 # MOVIENATIVE
-in-progress
+MOVIENATIVE is a mobile app that allows users to browse and discover popular movies and TV shows. The app features a simple and intuitive interface that allows users to search for titles, view trailers and reviews, and save their favorite shows and movies to a watchlist. MOVIENATIVE is built using React Native, a popular framework for building cross-platform mobile applications, and utilizes data from The Movie Database (TMDb) API to provide users with accurate and up-to-date information on the latest releases and popular titles. Whether you're a movie buff or just looking for something new to watch, MOVIENATIVE has something for everyone.
